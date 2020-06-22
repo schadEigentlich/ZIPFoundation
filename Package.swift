@@ -3,7 +3,7 @@ import PackageDescription
 
 #if canImport(Compression)
 let targets: [Target] = [
-    .target(name: "ZIPFoundation"),
+    .target(name: "ZIPFoundation", swiftSettings: [.unsafeFlags(["-gnone"])]),
     .testTarget(name: "ZIPFoundationTests", dependencies: ["ZIPFoundation"])
 ]
 #else
